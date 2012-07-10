@@ -19,7 +19,7 @@ For an app suite with potentially reusable app arguments, I typically define my 
 		val poolStop = AppArg("-poolStop", "Stop a specificly named pool '-poolName' or view a menu of current running pools to stop [none, all, or $poolName]")
 	}
 
-With the arguments we anticipate needing, we can proceed to very simply create a couple of __CmdLineApps__ which reference those __CmdLineArgs__.
+With these arguments in place, we can proceed to very simply create a couple of __CmdLineApps__ which reference those __CmdLineArgs__.
 
 	object CalculatorTaskScheduler extends CmdLineApp("CalculatorTaskScheduler", Array(schedulerName, schedulerHost, schedulerPort)) {
 		def schedulerSystemName = appName
