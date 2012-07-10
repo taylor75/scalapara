@@ -35,7 +35,7 @@ abstract class CmdLineApp(val appName:String, val appParams:Array[CmdLineArg]) {
 
   def usage = "Usage: " + appName + " " + appParams.map(_.argName).mkString(" ")
 
-  def description:String
+  def description:String = appName
 
   def parseAndValidateParamArgs(argsUnpaired: Array[String]): Option[ParsedArgs] = {
     val groupedArgs = argsUnpaired.grouped(2).toList
@@ -61,16 +61,16 @@ abstract class CmdLineApp(val appName:String, val appParams:Array[CmdLineArg]) {
       if (parsedWithDefs.size == appParams.size) {
         Some(parsedWithDefs)
       } else {
-        println("\n"+usage+"\nParameter Info: ")
+        println("\n"+usage+"\n\nParameter Info: ")
         val unspecifiedArgs = appParams.filter(reqArg => parsedArgs(reqArg) == null)
 
         unspecifiedArgs.collect{case a:AppArg => a}.foreach{invalidArg =>
-          println("\n"+invalidArg.argName +" ==> " + invalidArg.description)
+          println("\n\t"+invalidArg.argName +" ==> " + invalidArg.description)
         }
 
         println("\nParameter with Defaults:")
         unspecifiedArgs.collect{case d:DefaultArg => d}.foreach{invalidArg =>
-          println("\n"+invalidArg.argName +" ==> " + invalidArg.description + ": DefaultValue="+invalidArg.defaultVal+"\n")
+          println("\n\t"+invalidArg.argName +" ==> " + invalidArg.description + ": DefaultValue="+invalidArg.defaultVal+"\n")
         }
 
         None
