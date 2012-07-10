@@ -49,7 +49,7 @@ With these arguments in place, we can proceed to very simply create a couple of 
 		}
 	}
 
-The ```parseAndValidParamArgs(args)``` is inherited from the CmdLineApp base class, and it returns an ```Option[ParsedArgs]``` as long as all required arguments are set by the user.  The values can be extracted by using the apply method of the ParsedArgs reference.
+The ```parseAndValidateParamArgs(args)``` is inherited from the CmdLineApp base class, and it returns an ```Option[ParsedArgs]``` as long as all required arguments are set by the user.  The values can be extracted by using the apply method of the ParsedArgs reference.
 
 ## We have thus far created: 
 1. A list of reusable arguments and their descriptions.
