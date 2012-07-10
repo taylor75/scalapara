@@ -68,9 +68,9 @@ abstract class CmdLineApp(val appName:String, val appParams:Array[CmdLineArg]) {
           println("\n\t"+invalidArg.argName +" ==> " + invalidArg.description)
         }
 
-        println("\nParameter with Defaults:")
+        println("\nParameter(s) with Default Values:")
         unspecifiedArgs.collect{case d:DefaultArg => d}.foreach{invalidArg =>
-          println("\n\t"+invalidArg.argName +" ==> " + invalidArg.description + ": DefaultValue="+invalidArg.defaultVal+"\n")
+          println("\n\t"+invalidArg.argName +" ==> " + invalidArg.description + ": DefaultValue="+invalidArg.defaultVal)
         }
 
         None

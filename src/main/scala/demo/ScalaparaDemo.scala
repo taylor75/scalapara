@@ -23,7 +23,7 @@ object AppArgsDB {
 import AppArgsDB._
 object CalculatorTaskScheduler extends CmdLineApp("CalculatorTaskScheduler", Array(schedulerName, schedulerHost, schedulerPort)) {
   def schedulerSystemName = appName
-  override def description:String = " -- An executable for bringing online a master task scheduler to which pools of workers supervised by launchers will communicate."
+  override def description:String = "A CmdLineApp for bringing online a master task scheduler to which pools of workers supervised by launchers will communicate."
   def main(args: Array[String]) {
     parseAndValidateParamArgs(args) foreach{ paramArgs =>
       // do something with the user's parsed arguments
@@ -33,7 +33,7 @@ object CalculatorTaskScheduler extends CmdLineApp("CalculatorTaskScheduler", Arr
 }
 
 object RemoteCalculatorPoolApp extends CmdLineApp("RemoteCalculaterPoolApp", Array(poolName, numWorkers, schedulerName, schedulerHost, schedulerPort)) {
-  override def description:String = " -- An CmdLineApp for bringing online a distributed pool of workers supervised by a RemoteWorkerPool Actor."
+  override def description:String = "A CmdLineApp for bringing online a distributed pool of workers supervised by a RemoteWorkerPool Actor."
   def main(args: Array[String]) {
     parseAndValidateParamArgs(args) foreach{ appArgs:ParsedArgs =>
 
