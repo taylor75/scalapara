@@ -27,6 +27,7 @@ With these arguments in place, we can proceed to very simply create a couple of 
 		def main(args: Array[String]) {
 			parseAndValidateParamArgs(args) foreach{ paramArgs =>
 				// do something with the user's parsed arguments
+				println(paramArgs)
 			}
 		}
 	}
@@ -45,6 +46,7 @@ With these arguments in place, we can proceed to very simply create a couple of 
 				  * This could easily be addressed in a later version but in practice a little exception handling seems to suffice. **/
 				
 				// Now do something meaningful with the user's arguments.
+				println(List(pool, nWorkers, sName, sHost, sPort).mkString("\n"))
 			}
 		}
 	}
@@ -80,9 +82,9 @@ All that remains is to define a user-friendly shell script:
 
 	Usage: cluster-admin  [ CalculatorTaskScheduler | RemoteCalculatorPoolApp ] 
 
-	CalculatorTaskScheduler -- An executable for bringing online a master task scheduler to which pools of workers supervised by launchers will communicate.
+		CalculatorTaskScheduler -- An executable for bringing online a master task scheduler to which pools of workers supervised by launchers will communicate.
 
-	RemoteCalculatorPoolApp -- An CmdLineApp for bringing online a distributed pool of workers supervised by a RemoteWorkerPool Actor.
+		RemoteCalculatorPoolApp -- An CmdLineApp for bringing online a distributed pool of workers supervised by a RemoteWorkerPool Actor.
 
 ----  OR  ----
 
