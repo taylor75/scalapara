@@ -2,9 +2,9 @@
 
 Scalapara is a library for building cmd-line app-suites and for parsing their arguments.  It is implemented as a collection of abstract classes that can be used to extend scala objects containing a main method.  I was motivated to write it because I found myself writing a bunch of CmdLine app "suites" similar in spirit to __git__ and __svn__.  I wanted a way to help users understand the use-cases for the variety of sub-tasks in a suite of apps, yet also receive help on the various parameters available for a given individual subApp. 
 
-## So this tool builds a hierarchal model of an appsuite:
+## The Scalapara library let's an command line application developer build a hierarchal model of an appsuite:
 * I typically write a simple shell script that forwards its arguments to the top level app suite. (e.g. 'git').  If the user supplies no additional arguments, the list of apps and their descriptions are displayed.
-* If the user supplies a recognized __CmdLineApp__ name as the first arg to the shell script and nothing else, the list arguments are their descriptions will be displayed for the chosen app (e.g. 'git add' would show options available for the git add command).
+* If the user supplies a recognized __CmdLineApp__ name as the first arg to the shell script and nothing else, the list of arguments and their descriptions will be displayed for the chosen app (e.g. 'git add' would show options available for the git add command).
 * If the user supplies an appName, some but not all required arguments, the missing requirements and their descriptions will be displayed for the user.
 
 ## Sample demo app.
