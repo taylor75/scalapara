@@ -84,7 +84,7 @@ abstract class CmdLineApp(val appName:String, val appParams:Array[CmdLineArg]) {
 abstract class CmdLineAppSuite(val multiAppName:String, val cmdLineApps:List[CmdLineApp]) {
 
   def printInfo:String = {
-    List("Usage: task " + cmdLineApps.map(_.appName).mkString(" [ ", " | ", " ] "),
+    List("Usage: " + this.getClass.getCanonicalName + " "  + cmdLineApps.map(_.appName).mkString(" [ ", " | ", " ] "),
       cmdLineApps.map(a => a.appName + " -- " + a.description).mkString("\n\t", "\n\n\t", "")
     ).mkString("\n", "\n","\n")
   }
